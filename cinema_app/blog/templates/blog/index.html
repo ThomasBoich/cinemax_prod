@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+{%block bodycss%}white-theme{%endblock%}
+{%block title%}{{title}}{%endblock%}
+{%block content %}
+
+{%for ii in posts %}
+<div class="container col-lg-5">
+ <div class="col-lg-12 card"style="background-color:#1f1e1e;">
+  <div class="card-header">cbf
+      {%for iiii in ii.category.all %}
+        {{ iiii.category_id }}
+      {%endfor%}
+  </div>
+  <div class="card-body" style="color:#FFFFFF;">
+      <img src="{{ ii.photo.url }}" alt="">
+      <div class="col-lg-12"style="height:14px;"></div>
+      <h2 class="card-title">{{ ii.title }}</h2>
+      <div class="col-lg-12"style="height:14px;"></div>
+      <p class="card-text"style="color:#6c6c6c;">{{ ii.content|truncatewords:40 }}</p>
+      <div class="col-lg-12"style="height:14px;"></div>
+      <a href="{%url 'postshow' ii.pk %}" class="btn btn-primary">Читать полностью</a>
+      <div class="col-lg-12"style="height:14px;"></div>
+  </div>
+</div>
+</div>
+<div class="col-lg-12"style="height:14px;"></div>
+{%endfor%}
+{%endblock%}
+

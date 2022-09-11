@@ -1,0 +1,52 @@
+{% extends 'index.html' %}
+{%block title%}{{film.title}}{%endblock%}
+{%block meta_description%}{{film.meta_description}}{%endblock%}
+{%block meta_keywords%}{{film.meta_keyword}}{%endblock%}
+{% block content %}
+
+<style type="text/css"></style>
+<div class="film-img" style="background: url({{film.photo.url}}) no-repeat top center;background-size:cover;"><img src="" alt=""></div>
+<div class="container col-lg-9 filmshow" style="color:#FFFFFF;position:relative;z-index:99;max-width:1267px;">
+{%comment%}
+{{ ff.description }}
+{{ ff.player|safe }}
+{{ ff.content }}ff.ff.ff.ff.ff.ff.
+{%endcomment%}
+    <h1>{{ film.title }}</h1>
+      <div class="col-lg-12"style="height: 20px;border-bottom: 1px solid #ffffff1f;"></div>
+      <div class="col-lg-12"style="height: 20px;"></div>
+    <div class="film--info">
+        <div class="film-photo"><img src="{{film.photo.url}}" alt=""></div>
+        <ul>
+            <li><div class="film-line">Год:</div> <div class="tag">{{ film.date }}</div></li>
+            <li><div class="film-line">Жанр:</div>
+                 {%for category in film.genre.all%} <div class="tag">
+
+                <a href="">{{ category.title }}</a>
+                </div>{%endfor%}</li>
+            <li><div class="film-line">Актеры:</div> <div class="tag">
+                {% for artist in film.artists.all %}
+                <a href="">{{ artist.name }} {{ artist.surname }}</a>
+                {% endfor %}
+            </div></li>
+            <li><div class="film-line">Возраст:</div> <div class="tag">{{ film.rating }}</div></li>
+            <li><div class="film-line">Страна:</div> <div class="tag">{{ film.country }}</div></li>
+            <li><div class="film-line">Режиссер:</div> <div class="tag">{{ film.director }}</div></li>
+        </ul>
+        
+    </div>
+      <div class="col-lg-12"style="height: 20px;"></div>
+    <h4>Описание</h4>
+{{film.content}}
+      <div class="col-lg-12"style="height: 40px;border-bottom: 1px solid #ffffff1f;"></div>
+      <div class="col-lg-12"style="height: 40px;"></div>
+     <div class="clearfix"></div>
+    {{ film.player|safe }}
+<div class="col-lg-12"style="height: 40px;"></div>
+{{ film.description }}
+
+</div>
+<div class="col-lg-12"style="height: 99px;"></div>
+<div class="clearfix"></div>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+{%block bodycss%}white-theme{%endblock%}
+{%block title%}{% for PostTitle in post%}{{PostTitle.title}}{%endfor%}{%endblock%}
+{%block content %}
+
+{%for ii in post %}
+<div class="container col-lg-5">
+ <div class="col-lg-12 card" style="background-color:inherit;">
+  <div class="card-header">
+      {%for iiii in ii.category.all %}
+        {{ iiii.category_id }}
+      {%endfor%}
+  </div>
+  <div class="card-body"style="color:#FFFFFF;">
+      <img src="{{ ii.photo.url }}" alt="">
+      <div class="col-lg-12"style="height:14px;"></div>
+      <h2 class="card-title">{{ ii.title }}</h2>
+      <div class="col-lg-12"style="height:14px;"></div>
+    <p class="card-text">{{ ii.content }}</p>
+  </div>
+</div>
+</div>
+{%endfor%}
+{%endblock%}
+

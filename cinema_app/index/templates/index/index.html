@@ -1,0 +1,91 @@
+{% extends 'index.html' %}
+{%block title%}{{title}}{%endblock%}
+{%block meta_description%}{{meta_description}}{%endblock%}
+{%block meta_keywords%}{{meta_keyword}}{%endblock%}
+{% block content %}
+<style type="text/css">
+    .slider img{width:100%;max-width:1267px;border-radius:6px;}
+    .carousel-inner img{width:100%;max-width:1267px;border-radius:6px;}
+    .carousel-inner{margin:0 auto;}
+
+</style>
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner" style="width:100%;max-width:1237px;">
+
+   {% comment %}
+    <div>
+      <img src="">
+    </div>
+      {%endcomment%}
+
+
+       {% for i in photo %}
+    <div class="carousel-item active">
+      <img src="{{ i.photo.url }}" class="d-block" alt="...">
+    </div>
+       {% endfor %}
+            {% for i in photo %}
+    <div class="carousel-item">
+      <img src="{{ i.photo.url }}" class="d-block" alt="...">
+    </div>
+       {% endfor %}
+
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </a>
+</div>
+
+  <section class="center slider">
+  </section>
+
+<div id="carouselExampleIndicators" class="container col-lg-12 carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+      {% for i in photos %}
+    <div class="carousel-item active">
+      <img src="{{ i.photo.url }}" class="d-block w-100" alt="...">
+    </div>
+      {% endfor %}
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </a>
+</div>
+<div class="container col-md-12 col-lg-12  col-sm-12 top_list wow bounceInUp">
+    <h1>Новинки <span style="color:#6e6e6e;">{{ films.count }}</span></h1>
+    {% for film in films %}
+    <div class="col-lg-2" style="float: left;">
+        <a href="{% url 'showfilm' film.pk %}">
+            <div class="item-film">
+                 <img src="{{ film.photo.url }}" alt="">
+                 <h2>{{ film.title|truncatewords:2 }}</h2>
+                 <p>Гда выхода: {{ film.date }}</p>
+                {% for janre in film.genre.all %}
+                <a href="">{{ janre.title }}</a>
+                {% endfor %}
+
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

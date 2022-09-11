@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="ru">{% load static %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'animate.css' %}">
+	  <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <title>{%block title%}{%endblock%}</title>
+	  <meta name="keywords" content="{% block meta_keywords %}{% endblock %}" />
+	  <meta name="description" content="{% block meta_description %}{%endblock%}">
+    <style type="text/css">
+    </style>
+  </head>
+  <body style="background-color: #2b2f32;    background-color: #212529!important;background-color: #161616!important;"class="{%block bodycss%}{%endblock%}">
+<nav class="navbar navbar-expand-lg navbar-dark bg-darke fixed-top"style="border-bottom: 1px solid #bcbcbc1f;padding: 1px 0px 1px 0px;">
+  <div class="container-fluid container"style="width:95%;max-width:1267px;align-items:center;display:flex;">
+    <a class="navbar-brand" href="{% url 'index' %}"style="width:100px;font-weight:700;">CINEMAX</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{% url 'index' %}">Новинки</a>
+        </li>
+		  {% include 'index/include_category.html' %}
+		  <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{% url 'blog' %}">Блог</a>
+        </li>
+    </div>
+  </div>
+</nav>
+  <div class="col-lg-12"style="height: 90px;"></div>
+  {% block content %}{% endblock %}
+<div class="col-lg-12"style="height: 0px;"></div>
+<div class="clearfix"></div>
+<div class="clearfix"></div>
+
+<div class="col-lg-12"style="height: 70px;"></div>
+<div class="clearfix"></div>
+<div class="clearfix"></div>
+  	<!-- ////////////////////////   footer   ////////////////////// -->
+	<section class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="fotr_container">
+						<div class="ftr_center">
+							<div class="ftr_profile">
+								<a href="#" class="logo_container ftr_logo">
+									<img src="{% static 'Group1.png' %}" alt="">
+								</a>
+								<p class="ftr_dis m-0 p-0">Новые серии в день выхода и тысячи фильмов на вечер. Без рекламы, в хорошем качестве, с любимой озвучкой или в оригинале. Всегда есть что посмотреть</p>
+							</div>
+						</div>
+						<hr>
+						<div class="ftr_tops">
+							<div class="popular_posts">
+								<div class="post_box">
+									<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+										<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+										<line x1="3" y1="21" x2="21" y2="21" />
+										<path d="M3 7v1a3 3 0 0 0 6 0v-1m0 1a3 3 0 0 0 6 0v-1m0 1a3 3 0 0 0 6 0v-1h-18l2 -4h14l2 4" />
+										<line x1="5" y1="21" x2="5" y2="10.85" />
+										<line x1="19" y1="21" x2="19" y2="10.85" />
+										<path d="M9 21v-4a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v4" />
+									</svg>
+									<div class="post_box_content">
+										<h4 class="stats_number">
+											Merchants
+										</h4>
+										<p>We've Partnered With Over 3576+ Merchants</p>
+									</div>
+								</div>
+								<div class="post_box">
+									<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+										<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+										<path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2" />
+										<rect x="9" y="3" width="6" height="4" rx="2" />
+										<line x1="9" y1="12" x2="9.01" y2="12" />
+										<line x1="13" y1="12" x2="15" y2="12" />
+										<line x1="9" y1="16" x2="9.01" y2="16" />
+										<line x1="13" y1="16" x2="15" y2="16" />
+									</svg>
+									<div class="post_box_content">
+										<h4 class="stats_number">
+											Категории
+										</h4>
+										<p>
+											У нас вы найдете свыше 100 категорий фильмов
+										</p>
+									</div>
+								</div>
+								<div class="post_box">
+									<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+										<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+										<path d="M7.859 6h-2.834a2.025 2.025 0 0 0 -2.025 2.025v2.834c0 .537 .213 1.052 .593 1.432l6.116 6.116a2.025 2.025 0 0 0 2.864 0l2.834 -2.834a2.025 2.025 0 0 0 0 -2.864l-6.117 -6.116a2.025 2.025 0 0 0 -1.431 -.593z" />
+										<path d="M17.573 18.407l2.834 -2.834a2.025 2.025 0 0 0 0 -2.864l-7.117 -7.116" />
+										<path d="M6 9h-.01" />
+									</svg>
+									<div class="post_box_content">
+										<h4 class="stats_number">
+											Coupons
+										</h4>
+										<p>
+											Coupons
+										</p>
+									</div>
+								</div>
+								<div class="post_box">
+									<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+										<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+										<circle cx="12" cy="7" r="4" />
+										<path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+									</svg>
+									<div class="post_box_content">
+										<h4 class="stats_number">
+											Киноманы
+										</h4>
+										<p>На платформе более 200 000 любителей кино</p>
+									</div>
+								</div>
+							</div>
+							<div class="nav_links">
+								<div class="ftr_links">
+									<h2 class="ftr_heading">Полезно знать</h2>
+									<ul class="ftr_links_wrpr">
+										<li>
+											<a href="#">
+												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+													<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+													<polyline points="9 6 15 12 9 18"></polyline>
+												</svg> terms &amp; condition</a>
+										</li>
+										<li>
+											<a href="#">
+												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+													<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+													<polyline points="9 6 15 12 9 18"></polyline>
+												</svg>Privacy Policy</a>
+										</li>
+										<li>
+									</ul>
+								</div>
+								<div class="ftr_links">
+									<h2 class="ftr_heading">Популярные категории</h2>
+									<ul class="ftr_links_wrpr">
+										<li>
+											<a href="#">
+												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+													<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+													<polyline points="9 6 15 12 9 18"></polyline>
+												</svg> who we are</a>
+										</li>
+										<li>
+											<a href="#">
+												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+													<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+													<polyline points="9 6 15 12 9 18"></polyline>
+												</svg> terms &amp; condition</a>
+										</li>
+										<li>
+											<a href="#">
+												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+													<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+													<polyline points="9 6 15 12 9 18"></polyline>
+												</svg>Privacy Policy</a>
+										</li>
+										<li>
+											<a href="#">
+												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+													<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+													<polyline points="9 6 15 12 9 18"></polyline>
+												</svg>contact</a>
+										</li>
+									</ul>
+								</div>
+								<div class="ftr_links">
+									<h2 class="ftr_heading">top offers</h2>
+									<ul class="ftr_links_wrpr top_offers">
+										<li>
+											<a href="single_store.html">
+												<p class="name">£50 Off When You Spend £500</p>
+												<p class="offers">12 offers</p>
+											</a>
+										</li>
+										<li>
+											<a href="single_store.html">
+												<p class="name">£50 Off When You Spend £500</p>
+												<p class="offers">12 offers</p>
+											</a>
+										</li>
+										<li>
+											<a href="single_store.html">
+												<p class="name">£50 Off When You Spend £500</p>
+												<p class="offers">12 offers</p>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="subs_container">
+									<h3 class="ftr_heading">Следите за новостями</h3>
+									<p class="dis_text">Подпишись на еженедельную рассылку новостей и розыгрыш купонов</p>
+									<form class="subs_area">
+										<input type="email" placeholder="E-mail" required="">
+										<button>Подписаться</button>
+									</form>
+								</div>
+							</div>
+						</div>
+						<hr>
+						<div class="ftr_bottom">
+							<p>Copyright 2022 © All Rights Reserved. | Created & Managed By <a href="https://vk.com/tom_jefferson">BOICH</a>.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+<script src="{% static 'js/wow.min.js' %}"></script>
+<script>
+	  wow = new WOW(
+	  {
+	  boxClass:     'wow',      // default
+	  animateClass: 'animated', // default
+	  offset:       0,          // default
+	  mobile:       true,       // default
+	  live:         true        // default
+	}
+	)
+	wow.init();
+</script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script type="text/javascript">
+    $(document).on('ready', function() {
+      $(".center").slick({
+        dots: true,
+        infinite: true,
+        centerMode: true,
+        slidesToShow: 1,
+        slidesToScroll: 3
+      });
+    });
+</script>
+<script>
+var myCarousel = document.querySelector('#myCarousel')
+var carousel = new bootstrap.Carousel(myCarousel, {
+interval: 2000,
+wrap: false
+})
+</script>
+
+<script>
+$(window).scroll(function() {
+var height = $(window).scrollTop();
+if(height > 70){
+$('.navbar').addClass('style');
+} else{
+$('.navbar').removeClass('style');
+}
+});
+</script>
+
+<script>
+var navbar = $('.navbar'),
+scrollPrev = 0;
+
+$(window).scroll(function() {
+var scrolled = $(window).scrollTop();
+
+if ( scrolled > 20 && scrolled > scrollPrev ) {
+navbar.addClass('out');
+} else {
+navbar.removeClass('out');
+}
+scrollPrev = scrolled;
+});
+
+</script>
+  </body>
+</html>
