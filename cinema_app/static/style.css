@@ -473,3 +473,19 @@ float:left;color:#d0b96f;
     background-size:cover;
     }.film-photo{}.film-photo img{max-width:90px;max-width: 179px;
     margin: 0px 36px 0px 0px;}
+	.the-community{
+		transition: all 0.5s;
+	  }
+	  
+	  .community-slide-0 {
+		  background-color: var(--bs-red);
+	  }
+	  .community-slide-1 {
+		  background-color: var(--bs-yellow);
+	  }
+	  .community-slide-2 {
+		  background-color: var(--bs-teal);
+	  }
+	  .community-slide-3 {
+		  background-color: var(--bs-orange);
+	  }
