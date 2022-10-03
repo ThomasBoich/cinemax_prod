@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+{%block title%}{{title}}{%endblock%}
+{%block meta_description%}{{meta_description}}{%endblock%}
+{%block meta_keywords%}{{meta_keyword}}{%endblock%}
+{% block content %}
+<form action="">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Войти</button>
+</form>
+{% endblock %}
